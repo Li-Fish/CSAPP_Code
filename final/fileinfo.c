@@ -45,7 +45,7 @@ void do_ls(char dirname[]) {
 
 void dostat(char *filename) {
     struct stat info;
-    if (stat(filename, &info) == -1) {
+    if (lstat(filename, &info) == -1) {
         perror(filename);
     } else {
         show_file_info(filename, &info);
